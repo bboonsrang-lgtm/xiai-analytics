@@ -1,26 +1,377 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Xi ai Analytics</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Xi ai Analytics is a research-focused TikTok analytics application for authorized content performance analysis.">
+  <title>Xi ai Analytics</title>
+  <link rel="icon" type="image/png" href="app-icon.png">
+
+  <style>
+    :root {
+      --black: #121212;
+      --gray: #666;
+      --light: #f5f5f7;
+      --line: #e5e5e5;
+      --purple: #7657ff;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--black);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 7%;
+      background: rgba(255,255,255,0.96);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    nav a {
+      margin-left: 22px;
+      color: var(--black);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: var(--purple);
+    }
+
+    .hero {
+      padding: 100px 7%;
+      background: linear-gradient(135deg, #f7f5ff 0%, #ffffff 65%);
+    }
+
+    .hero-content {
+      max-width: 820px;
+    }
+
+    .eyebrow {
+      color: var(--purple);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 14px 0 22px;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      color: var(--gray);
+      font-size: 19px;
+    }
+
+    .status {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #eeeaff;
+      color: #5740c6;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 76px 7%;
+    }
+
+    .section-light {
+      background: var(--light);
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 38px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: clamp(30px, 4vw, 46px);
+      letter-spacing: -1px;
+    }
+
+    .section-heading p,
+    .card p,
+    .content-block p {
+      color: var(--gray);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      padding: 28px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+
+    .card-number {
+      color: var(--purple);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .card h3 {
+      margin: 12px 0 8px;
+      font-size: 20px;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 54px;
+      align-items: start;
+    }
+
+    .content-block ul {
+      padding-left: 20px;
+    }
+
+    .content-block li {
+      margin-bottom: 10px;
+    }
+
+    .notice {
+      padding: 26px;
+      border-left: 4px solid var(--purple);
+      background: #f7f5ff;
+      border-radius: 0 14px 14px 0;
+    }
+
+    footer {
+      padding: 34px 7%;
+      background: var(--black);
+      color: #ddd;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin-right: 18px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 760px) {
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav a {
+        margin: 0 16px 0 0;
+      }
+
+      .hero {
+        padding-top: 70px;
+      }
+
+      .grid,
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <header>
+    <div class="brand">
+      <img src="app-icon.png" alt="Xi ai Analytics app icon">
+      <span>Xi ai Analytics</span>
+    </div>
 
-<h1>Xi ai Analytics</h1>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#data">Data Use</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </header>
 
-<p>AI-powered TikTok Analytics Platform</p>
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">Independent Research Analytics</div>
+        <h1>Understand content through responsible analytics.</h1>
+        <p>
+          Xi ai Analytics is a research-focused application that helps authorized
+          users examine TikTok content performance, engagement patterns, and
+          audience trends for educational and non-commercial research purposes.
+        </p>
+        <div class="status">Access limited to authorized project users</div>
+      </div>
+    </section>
 
-<p>This website is currently under development.</p>
+    <section id="about">
+      <div class="section-heading">
+        <h2>About Xi ai Analytics</h2>
+        <p>
+          The application supports the Xi ai digital-character research project.
+          It provides a structured environment for reviewing authorized TikTok
+          account data and converting performance information into research-oriented
+          summaries and insights.
+        </p>
+      </div>
 
-<p>
-<a href="privacy.html">Privacy Policy</a>
-</p>
+      <div class="two-column">
+        <div class="content-block">
+          <h3>Purpose</h3>
+          <p>
+            Xi ai Analytics is designed to support content evaluation, audience
+            understanding, academic learning, and responsible research into digital
+            communication and character-based social media content.
+          </p>
+        </div>
 
-<p>
-<a href="terms.html">Terms of Service</a>
-</p>
+        <div class="content-block">
+          <h3>Who can use it</h3>
+          <p>
+            Access is limited to the project owner and specifically authorized
+            research users. The application is not offered as a public consumer
+            analytics service and does not sell TikTok user data.
+          </p>
+        </div>
+      </div>
+    </section>
 
+    <section id="features" class="section-light">
+      <div class="section-heading">
+        <h2>Core functions</h2>
+        <p>
+          The application organizes authorized account information into clear,
+          research-focused views.
+        </p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <div class="card-number">01</div>
+          <h3>Performance overview</h3>
+          <p>
+            Review available content metrics and identify changes in performance
+            across authorized posts.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-number">02</div>
+          <h3>Content comparison</h3>
+          <p>
+            Compare content formats and posting patterns to support evidence-based
+            content evaluation.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-number">03</div>
+          <h3>Research summaries</h3>
+          <p>
+            Organize authorized analytics into understandable summaries for
+            educational and research use.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="data">
+      <div class="section-heading">
+        <h2>How data access works</h2>
+      </div>
+
+      <div class="two-column">
+        <div class="content-block">
+          <ul>
+            <li>Data is accessed only after an authorized TikTok user grants permission.</li>
+            <li>Access is limited to the permissions approved by the user and TikTok.</li>
+            <li>Data is used only for the purposes described on this website.</li>
+            <li>Users may revoke authorization through their TikTok account settings.</li>
+            <li>Xi ai Analytics does not sell personal data.</li>
+          </ul>
+        </div>
+
+        <div class="notice">
+          <strong>Transparency notice</strong>
+          <p>
+            Xi ai Analytics is an independent research application. It is not
+            sponsored, endorsed, or operated by TikTok. TikTok is a trademark of
+            its respective owner.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-light">
+      <div class="section-heading">
+        <h2>Contact</h2>
+        <p>
+          Questions about the application, privacy, or data requests may be sent to:
+          <a href="mailto:b.boonsrang@gmail.com">b.boonsrang@gmail.com</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-row">
+      <div>© 2026 Xi ai Analytics</div>
+      <div>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
 </body>
-
 </html>
